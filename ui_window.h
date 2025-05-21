@@ -1,1 +1,2 @@
 int DrawWindow();
+int MenuBar();

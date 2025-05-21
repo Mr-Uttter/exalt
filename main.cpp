@@ -31,6 +31,7 @@ int main() {
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
+        MenuBar();
         DrawWindow();
         ImGui::Render();
         int display_w, display_h;
@@ -42,12 +43,13 @@ int main() {
         glfwSwapBuffers(window);
     }
 
-    // Cleanup
-    ImGui_ImplOpenGL3_Shutdown();
-    ImGui_ImplGlfw_Shutdown();
-    ImGui::DestroyContext();
-    glfwDestroyWindow(window);
-    glfwTerminate();
+    int CloseProgram(){
+        ImGui_ImplOpenGL3_Shutdown();
+        ImGui_ImplGlfw_Shutdown();
+        ImGui::DestroyContext();
+        glfwDestroyWindow(window);
+        glfwTerminate();
 
-    return 0;
+        return 0;
+    }
 }
